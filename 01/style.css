@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+:root {
+  --color-border: #d7d6d6;
+  --color-disabled: #ccc;
+  --color-white: #fff;
+  --color-active: #51a1ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+  background-color: var(--color-white);
+}
+
+/* UI */
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 24px;
+}
+
+.header-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.header-subtitle::before {
+  padding: 0 8px;
+  content: '|';
+}
+
+.discovery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fill, 1fr);
+  width: 980px;
+  padding: 10px;
+  gap: 10px;
+  border: 1px solid var(--color-border);
+}
+
+.card {
+  position: relative;
+  display: block;
+  border: 1px solid var(--color-border);
+}
+
+.card:hover {
+  border-color: var(--color-active);
+}
+
+.card::after {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 16px;
+  content: '더보기';
+  color: var(--color-white);
+  background-color: var(--color-disabled);
+}
+
+.card:hover::after,
+.card:focus::after {
+  content: '구매하기';
+  background-color: var(--color-active);
+}
+
+.card img {
+  display: block;
+  width: 100%;
+}
+
+.card-sm {
+  grid-column: span 1;
+}
+
+.card-lg {
+  grid-column: span 2;
+}
